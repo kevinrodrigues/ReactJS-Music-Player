@@ -10,4 +10,14 @@ body {
   max-width: 800px;
   margin: 0 auto; }
 
+.player {
+  position: relative;
+  height: 400px;
+  margin-top: 130px; }
+
+.album {
+  width: 302px;
+  height: 304px;
+  margin: -100px auto 0; }
+
 /*# sourceMappingURL=output.css.map */
