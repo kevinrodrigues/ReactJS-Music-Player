@@ -4,7 +4,7 @@ export default class Audio extends React.Component {
     render() {
         return (
             <audio id="audio">
-                <source src=""/>
+                <source src={this.props.src}/>
             </audio>
         );
     }
