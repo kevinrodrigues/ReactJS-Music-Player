@@ -14,9 +14,24 @@ export default class Player extends React.Component {
         super();
 
         this.state = {
-            "playStatus": "playing",
+            "isPlaying": true,
             "currentTime": 0
         };
+    }
+
+    togglePlaying() {
+        let playingStatus = this.state.isPlaying;
+        let el = document.getElementById('audio');
+
+        if (playingStatus) {
+            playingStatus = false;
+            el.play();
+        } else {
+            playingStatus = true;
+            el.pause();
+        }
+
+        this.setState({isPlaying: playingStatus});
     }
 
     render() {
@@ -36,7 +51,7 @@ export default class Player extends React.Component {
                 <Album albumCover={TRACK.albumCover}/>
                 <TrackDetails name={TRACK.name}/>
                 <Scrubber/>
-                <Controls/>
+                <Controls isPlaying={this.state.isPlaying} onClick={this.togglePlaying.bind(this)}/>
                 <TimeStamp duration={TRACK.duration} currentTime={this.state.currentTime}/>
                 <Audio src={TRACK.source}/>
             </div>
