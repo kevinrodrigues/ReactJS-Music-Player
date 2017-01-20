@@ -1,23 +1,46 @@
-.app {
+.player {
   background: #75788e;
   background: -webkit-radial-gradient(center, ellipse cover, #75788e 0%, #5e6178 100%); }
 
+* {
+  box-sizing: border-box; }
+
 body {
+  font-family: 'Slabo 27px', serif;
+  color: #fff;
   background: #fff;
   margin: 0; }
 
-.app {
-  max-width: 800px;
+.app,
+.player {
   margin: 0 auto; }
 
 .player {
-  position: relative;
-  height: 400px;
-  margin-top: 130px; }
+  max-width: 800px;
+  padding: 200px 45px 45px; }
 
 .album {
-  width: 302px;
+  width: 304px;
   height: 304px;
-  margin: -100px auto 0; }
+  margin: 0 auto -200px; }
+  .album img {
+    box-shadow: 10px 10px 83px -12px rgba(0, 0, 0, 0.45); }
+
+.track-details ul {
+  margin: 0;
+  padding: 0; }
+  .track-details ul li {
+    list-style-type: none; }
+
+.track-name {
+  font-size: 2.5rem; }
+
+.controls button {
+  background-color: #72e6cf;
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  border: 0;
+  padding: 0; }
 
 /*# sourceMappingURL=output.css.map */

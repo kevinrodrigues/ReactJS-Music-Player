@@ -1,6 +1,5 @@
 import React from "react";
 
-import Header from "./Header";
 import Album from "./Album";
 import TrackDetails from "./TrackDetails";
 import Scrubber from "./Scrubber";
@@ -35,7 +34,7 @@ export default class Player extends React.Component {
     }
 
     render() {
-        const TRACK = {
+        let trackDetails = {
             "name": "Say you won't let go",
             "artist": "James Authur",
             "album": "Back from the Edge",
@@ -46,15 +45,19 @@ export default class Player extends React.Component {
         };
 
         return (
-            <div className="player">
-                <Header/>
-                <Album albumCover={TRACK.albumCover}/>
-                <TrackDetails name={TRACK.name}/>
-                <Scrubber/>
-                <Controls isPlaying={this.state.isPlaying} onClick={this.togglePlaying.bind(this)}/>
-                <TimeStamp duration={TRACK.duration} currentTime={this.state.currentTime}/>
-                <Audio src={TRACK.source}/>
+            <div className="player-container">
+                <Album albumCover={trackDetails.albumCover}/>
+                <div className="player">
+                    <div className="track-info">
+                        <TrackDetails name={trackDetails.name} artist={trackDetails.artist} album={trackDetails.album}/>
+                        <Scrubber/>
+                        <Controls isPlaying={this.state.isPlaying} onClick={this.togglePlaying.bind(this)}/>
+                        <TimeStamp duration={trackDetails.duration} currentTime={this.state.currentTime}/>
+                    </div>
+                    <Audio src={trackDetails.source}/>
+                </div>
             </div>
+
         );
     }
 }

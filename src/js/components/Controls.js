@@ -5,14 +5,14 @@ export default class Controls extends React.Component {
         let className;
 
         if (this.props.isPlaying) {
-            className = 'playing';
+            className = 'icono-play';
         } else {
-            className = 'stopped';
+            className = 'icono-pause';
         }
 
         return (
             <div className="controls">
-                <button onClick={this.props.onClick} className={className}></button>
+                <button onClick={this.props.onClick}><i className={className}></i></button>
             </div>
         );
     }

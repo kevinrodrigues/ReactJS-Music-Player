@@ -1,29 +1,71 @@
 $color-white: #fff;
+$play-button: #72e6cf;
+$player-padding: 200px;
 
 %background {
 	background: #75788e;
 	background: -webkit-radial-gradient(center, ellipse cover,  #75788e 0%,#5e6178 100%);
 }
 
+* { box-sizing: border-box; }
+
 body {
+	font-family: 'Slabo 27px', serif;
+	color: $color-white;
 	background: $color-white;
 	margin: 0;
 }
 
-.app {
-	@extend %background;
-	max-width: 800px;
+.app,
+.player {
 	margin: 0 auto;
 }
 
 .player {
-	position: relative;
-	height: 400px;
-	margin-top: 130px;
+	@extend %background;
+	max-width: 800px;
+	padding: $player-padding 45px 45px;
 }
 
 .album {
-	width: 302px;
-	height: 304px;
-	margin: -100px auto 0;
+	$album-size: 304px;
+	width: $album-size;
+	height: $album-size;
+	margin: 0 auto -#{$player-padding};
+
+	img {
+		box-shadow: 10px 10px 83px -12px rgba(0, 0, 0, 0.45);
+	}
+}
+
+.track-details {
+	ul {
+		margin: 0;
+		padding: 0;
+
+		li {
+			list-style-type: none;
+		}
+	}
+}
+
+.track-name {
+	font-size: 2.5rem;
+}
+
+.controls {
+	button {
+		$play-button-size: 75px;
+		background-color: $play-button;
+		border-radius: 50%;
+		width: $play-button-size;
+		height: $play-button-size;
+		border: 0;
+		padding: 0;
+
+		&.playing,
+		&.stopped {
+
+		}
+	}
 }
