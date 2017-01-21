@@ -15,9 +15,14 @@ body {
 .player {
   margin: 0 auto; }
 
-.player {
+.player-container {
   max-width: 800px;
-  padding: 200px 45px 45px; }
+  margin: 0 auto; }
+
+.player {
+  padding: 200px 45px 45px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px; }
 
 .album {
   width: 304px;
@@ -26,21 +31,57 @@ body {
   .album img {
     box-shadow: 10px 10px 83px -12px rgba(0, 0, 0, 0.45); }
 
-.track-details ul {
-  margin: 0;
-  padding: 0; }
-  .track-details ul li {
-    list-style-type: none; }
+.track-info {
+  overflow: hidden; }
+
+.track-details {
+  float: left; }
+  .track-details ul {
+    margin: 30px 0;
+    padding: 0; }
+    .track-details ul li {
+      list-style-type: none;
+      margin-top: 5px; }
+
+.timestamps {
+  clear: both; }
+  .timestamps div {
+    display: inline-block; }
+  .timestamps .total {
+    float: right; }
 
 .track-name {
   font-size: 2.5rem; }
 
-.controls button {
-  background-color: #72e6cf;
-  border-radius: 50%;
+.track-artist {
+  color: #aeb1cd;
+  font-size: 1em; }
+
+.controls {
   width: 75px;
   height: 75px;
-  border: 0;
-  padding: 0; }
+  float: right;
+  margin-top: 40px; }
+  .controls button {
+    background-color: #72e6cf;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    border: 0;
+    padding: 0; }
+    .controls button:hover {
+      opacity: 0.5;
+      cursor: pointer; }
+
+.progress-bar {
+  width: 100%;
+  height: 7px;
+  background-color: #77798e; }
+  .progress-bar .progress {
+    background-color: #72e6cf;
+    height: 100%;
+    width: 0%;
+    transition: width .25s ease;
+    pointer-events: none; }
 
 /*# sourceMappingURL=output.css.map */
