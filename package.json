@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "description": "",
   "main": "webpack.config.js",
-  "homepage": "https://kevinrodrigues.github.io/ReactJS-Music-Player/",
   "dependencies": {
     "babel-core": "^6.17.0",
     "babel-loader": "^6.2.0",
@@ -24,8 +23,7 @@
   },
   "scripts": {
     "dev": "webpack-dev-server --content-base src --inline --hot",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "gh-pages -d build"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC"
